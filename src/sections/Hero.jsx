@@ -4,6 +4,7 @@ import { OrbitControls } from "@react-three/drei";
 
 import Developer from "../components/Developer";
 import Button from "../components/Button";
+import CanvasLoader from "../components/CanvasLoader";
 
 const Hero = () => {
   const [animationName, setAnimationName] = useState("idle");
@@ -62,7 +63,7 @@ const Hero = () => {
               <directionalLight position={[10, 10, 10]} intensity={1} />
               <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
 
-              <Suspense fallback={null}>
+              <Suspense fallback={<CanvasLoader />}>
                 <Developer
                   position-y={-3}
                   scale={3}
